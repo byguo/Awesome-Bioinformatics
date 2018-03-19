@@ -1,0 +1,100 @@
+了不起的生物信息学 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Build Status](https://travis-ci.org/danielecook/Awesome-Bioinformatics.svg?branch=master)](https://travis-ci.org/danielecook/Awesome-Bioinformatics)
+======================
+
+> 生物信息学是一门开发挖掘生物数据方法或软件工具的交叉学科 — [Wikipedia](https://en.wikipedia.org/wiki/Bioinformatics)
+
+包括生物信息软件、资源及文库集的详情表，多数工具是基于命令行的、开源或免费的。欢迎大家积极贡献资源！[contribute](CONTRIBUTING.md)!
+
+**目录**
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [测序数据处理](#data-processing)
+  - [命令行工具](#command-line-utilities)
+- [高通量测序](#next-generation-sequencing)
+  - [流程及流程框架](#pipelinespipeline-frameworks)
+  - [序列处理](#sequence-processing)
+  - [序列比对](#sequence-alignment)
+  - [DNA变异](#variant-calling)
+  - [BAM文件工具](#bam-file-utilities)
+  - [VCF文件工具](#vcf-file-utilities)
+  - [GFF/BED文件工具](#gff-bed-file-utilities)
+  - [DNA变异模拟](#variant-simulation)
+  - [DNA变异过滤/质量控制](#variant-filtering--quality-control)
+  - [DNA变异功能预测/注释](#variant-predictionannotation)
+  - [Python 模块](#python-modules)
+    - [数据](#data)
+    - [工具](#tools)
+- [可视化](#visualization)
+  - [基因组浏览器/基因图谱](#genome-browsers--gene-diagrams)
+  - [Circos相关](#circos-related)
+- [数据库接口](#database-access)
+- [资源](#resources)
+  - [成为生物信息学家](#becoming-a-bioinformatician)
+  - [测序](#sequencing)
+  - [RNA-Seq](#rna-seq)
+  - [ChIP-Seq](#chip-seq)
+  - [YouTube 频道及播放列表](#youtube-channels-and-playlists)
+  - [博客](#blogs)
+  - [其他工具](#miscellaneous)
+- [许可](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+----
+
+## 测序数据工具
+
+### 命令行工具
+
+* __[单行生物信息命令](https://github.com/stephenturner/oneliners)__ - 实用的单行生物信息命令的Git仓库.
+* __[BioNode](https://www.bionode.io/)__ - Modular and universal bioinformatics, Bionode provides pipeable UNIX command line tools and JavaScript APIs for bioinformatics analysis workflows.
+* __[bioSyntax](http://www.bioSyntax.org/)__ - Syntax Highlighting for Computational Biology file formats (SAM, VCF, GTF, FASTA, PDB, etc...) in vim/less/gedit/sublime. 
+* __[CSVKit](https://github.com/wireservice/csvkit)__ - Utilities for working with CSV/Tab-delimited files.
+* __[csvtk](https://github.com/shenwei356/csvtk)__ - Another cross-platform, efficient, practical and pretty CSV/TSV toolkit.
+* __[datamash](http://www.gnu.org/software/datamash/)__ - Data transformations and statistics.
+* __[easy_qsub](https://github.com/shenwei356/easy_qsub)__ - Easily submitting PBS jobs with script template. Multiple input files supported.
+* __[GNU `parallel`](http://www.gnu.org/software/parallel/)__ - General parallelizer that runs jobs in parallel on a single multi-core machine. [Here](https://www.biostars.org/p/63816/) are some example scripts using GNU `parallel`.
+* __[grabix](https://github.com/arq5x/grabix)__ - A wee tool for random access into BGZF files.
+* __[tabix](https://github.com/samtools/tabix)__ - Table file index.
+* __[wormtable](https://github.com/wormtable/wormtable)__ - Write-once-read-many table for large datasets.
+* __[zindex](https://github.com/mattgodbolt/zindex)__ - Create an index on a compressed text file.
+
+## Next Generation Sequencing
+
+### Pipelines/Pipeline frameworks
+
+* __[Awesome-Pipeline](https://github.com/pditommaso/awesome-pipeline)__ - A list of pipeline resources.
+* __[bcbio-nextgen](https://github.com/chapmanb/bcbio-nextgen)__ - Batteries included genomic analysis pipeline for variant and RNA-Seq analysis, structural variant calling, annotation, and prediction.
+* __[BigDataScript](https://pcingola.github.io/BigDataScript/)__ - A cross-system scripting language for working with big data pipelines in computer systems of different sizes and capabilities.
+* __[Bpipe](http://docs.bpipe.org)__ - A small language for defining pipeline stages and linking them together to make pipelines.
+* __[Common Workflow Language](http://www.commonwl.org/)__ - a specification for describing analysis workflows and tools that are portable and scalable across a variety of software and hardware environments, from workstations to cluster, cloud, and high performance computing (HPC) environments.
+* __[Cromwell](https://github.com/broadinstitute/cromwell)__ - A Workflow Management System geared towards scientific workflows. 
+* __[GATK Queue](https://gatkforums.broadinstitute.org/gatk/discussion/1288/howto-run-queue-for-the-first-time)__ - A pipelining system built to work natively with GATK as well as other high-throughput sequence analysis software. [Overview](https://web.archive.org/web/20161022074922/https://gatkforums.broadinstitute.org/firecloud/discussion/1306/overview-of-queue) of GATK Queue.
+* __[Nextflow](https://www.nextflow.io)__ - A fluent DSL modelled around the UNIX pipe concept, that simplifies writing parallel and scalable pipelines in a portable manner.
+* __[Ruffus](http://www.ruffus.org.uk)__ - Computation Pipeline library for python widely used in science and bioinformatics.
+* __[SeqWare](https://seqware.github.io/)__ - Hadoop Oozie-based workflow system focused on genomics data analysis in cloud environments.
+* __[Snakemake](https://bitbucket.org/snakemake/snakemake/wiki/Home)__ - A workflow management system in Python that aims to reduce the complexity of creating workflows by providing a fast and comfortable execution environment.
+* __[Workflow Descriptor Language](https://github.com/broadinstitute/wdl)__ - Workflow standard developed by the Broad.
+
+### Sequence Processing
+
+Sequence Processing includes tasks such as demultiplexing raw read data, and trimming low quality bases.
+
+* __[AfterQC](https://github.com/OpenGene/AfterQC)__ - Automatic Filtering, Trimming, Error Removing and Quality Control for fastq data
+* __[FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)__ - A quality control tool for high throughput sequence data.
+* __[Fastqp](https://github.com/mdshw5/fastqp)__ - FASTQ and SAM quality control using Python.
+* __[Fastx Tookit](http://hannonlab.cshl.edu/fastx_toolkit/)__ - FASTQ/A short-reads pre-processing tools: Demultiplexing, trimming, clipping, quality filtering, and masking utilities.
+* __[MultiQC](http://multiqc.info/)__ - Aggregate results from bioinformatics analyses across many samples into a single report.
+* __[SeqKit](https://github.com/shenwei356/seqkit)__ - A cross-platform and ultrafast toolkit for FASTA/Q file manipulation in Golang.
+* __[seqmagick](http://seqmagick.readthedocs.io/en/latest/)__ - file format conversion in Biopython in a convenient way
+* __[Seqtk](https://github.com/lh3/seqtk)__ - Toolkit for processing sequences in FASTA/Q formats.
+
+
+### Sequence Alignment
+
+__De Novo Alignment__
+
+__DNA Resequencing__
